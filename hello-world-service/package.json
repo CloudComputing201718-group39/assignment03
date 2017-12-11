@@ -1,5 +1,5 @@
 {
-  "name": "helloWorld",
+  "name": "hello-world",
   "version": "1.0.0",
   "description": "Hello World Service",
   "main": "index.js",
