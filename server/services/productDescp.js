@@ -12,6 +12,8 @@ const act = Promise.promisify(seneca.client({ host: config.product_descp_service
 /**
  * To DO: Define Service Method
  */
+const get_ProductURL = { role: 'product_descp', cmd: 'URL' };
+const get_ProductName = { role: 'product_descp', cmd: 'name' };
 
 /**
  * Call Service Method
@@ -20,11 +22,12 @@ const getProductURL = (productId) => {
     /**
      * To DO: Write act Method
      */
+     return act(Object.assign({}, get_ProductURL, { productId }));
 };
 const getProductName = (productId) => {
     /**
-     * To DO: Write act Method
-     */
+     * To DO: Write act Method*/
+      return act(Object.assign({}, get_ProductName, { productId }));
 };
 module.exports = {
     getProductURL,
