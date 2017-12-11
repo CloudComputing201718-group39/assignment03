@@ -9,7 +9,7 @@ module.exports = function (options) {
     //To DO: add the pattern functions and describe the logic inside the function
     function getProductURL(msg, respond) {
         if(msg.productId){
-            var res = "URL "+msg.productId;
+            var res = "URL "+ msg.productId;
             respond(null, { result: res });
         }
         else {
@@ -18,14 +18,19 @@ module.exports = function (options) {
     }
       function getProductName(msg, respond) {
         if(msg.productId){
-            var res = "name "+msg.productId;
-            respond(null, { result: res });
+
+          for(var i = 0; i < mockData.length; ++i) {
+
+            if(msg.productId === mockData[i].product_id){
+              var res = "name "+ mockData[i].product_name;
+              respond(null, { result: res });
+            }
+          }
+
         }
         else {
             respond(null, { result: ''});
         }
     }
-    
+
 }
-
-
