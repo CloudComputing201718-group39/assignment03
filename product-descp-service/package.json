@@ -9,6 +9,7 @@
   "author": "Anshul Jindal (ansjin)",
   "license": "ISC",
   "dependencies": {
-    "seneca": "^3.2.2"
+    "seneca": "^3.2.2",
+    "jQuery": "^1.7.2"
   }
 }
