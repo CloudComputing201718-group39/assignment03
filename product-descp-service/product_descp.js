@@ -13,29 +13,33 @@ module.exports = function (options) {
     // TODO: add the pattern functions and describe the logic inside the function
     function getProductName(msg, respond) {
         if (msg.productId) {
+            let res = '';
             for (i = 0; i < mockData.length; i++) {
                 if (mockData[i].product_id === parseInt(msg.productId)) {
-                    respond(null, { productName: mockData[i].product_name });
+                    res = mockData[i].product_name;
+                    break;
                 }
             }
+            respond(null, { result: res });
         }
         else {
-            respond(null, { productName: ''});
+            respond(null, { result: ''});
         }
     }
 
     function getProductURL(msg, respond) {
         if (msg.productId) {
+            let res = '';
             for (i = 0; i < mockData.length; i++) {
                 if (mockData[i].product_id === parseInt(msg.productId)) {
-                    respond(null, { productURL: mockData[i].product_url });
+                    res = mockData[i].product_url;
+                    break;
                 }
             }
+            respond(null, { result: res });
         }
         else {
-            respond(null, { productURL: ''});
+            respond(null, { result: ''});
         }
     }
-
-    // this.act({role: 'product_descp', cmd: 'productname', product_id: '1'}, console.log);
 };

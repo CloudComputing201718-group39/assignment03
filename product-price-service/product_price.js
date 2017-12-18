@@ -7,19 +7,22 @@ module.exports = function (options) {
     const mockData = require('./MOCK_DATA.json');
 
     // Todo: Add the patterns and their corresponding functions
-    this.add('role:product_price, cmd:productprice', getProductPrice);
+    this.add({role:'product_price', cmd:'productprice'}, getProductPrice);
 
     // Todo: add the pattern functions and describe the logic inside the function
     function getProductPrice(msg, respond) {
         if (msg.productId) {
-            for (i = 0; i < mockData.length; i++) {
+            for (let i = 0; i < mockData.length; i++) {
+                var res = '';
                 if (mockData[i].product_id === parseInt(msg.productId)) {
-                    respond(null, { productPrice: mockData[i].product_price });
+                    res = mockData[i].product_price;
+                    break;
                 }
             }
+            respond(null, { result: res });
         }
         else {
-            respond(null, { productPrice: ''});
+            respond(null, { result: ''});
         }
     }
 
