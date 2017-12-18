@@ -10,18 +10,17 @@ const config = require('../config');
 const act = Promise.promisify(seneca.client({ host: config.product_price_service.host, port: config.product_price_service.port }).act, { context: seneca });
 
 /**
- * To DO: Define Service Method
+ * Define Service Method
  */
+const GET_PRODUCT_PRICE = { role:'product_descp', cmd:'productprice' };
 
 /**
- * To DO: Call Service Method
+ * Call Service Method
  */
-
 const getProductPrice = (productId) => {
-    /**
-     * To DO: Write act Method
-     */
+    return act(Object.assign({}, GET_PRODUCT_PRICE, { productID }));
 };
+
 module.exports = {
     getProductPrice
 };
