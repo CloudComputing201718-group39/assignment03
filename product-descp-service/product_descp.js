@@ -12,7 +12,7 @@ module.exports = function (options) {
 
     // TODO: add the pattern functions and describe the logic inside the function
     function getProductName(msg, respond) {
-        if (msg.productID) {
+        if (msg.productId) {
             for (i = 0; i < mockData.length; i++) {
                 if (mockData[i].product_id === parseInt(msg.productId)) {
                     respond(null, { productName: mockData[i].product_name });
@@ -25,7 +25,7 @@ module.exports = function (options) {
     }
 
     function getProductURL(msg, respond) {
-        if (msg.productID) {
+        if (msg.productId) {
             for (i = 0; i < mockData.length; i++) {
                 if (mockData[i].product_id === parseInt(msg.productId)) {
                     respond(null, { productURL: mockData[i].product_url });

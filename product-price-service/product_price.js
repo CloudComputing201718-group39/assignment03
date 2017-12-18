@@ -11,7 +11,7 @@ module.exports = function (options) {
 
     // Todo: add the pattern functions and describe the logic inside the function
     function getProductPrice(msg, respond) {
-        if (msg.productID) {
+        if (msg.productId) {
             for (i = 0; i < mockData.length; i++) {
                 if (mockData[i].product_id === parseInt(msg.productId)) {
                     respond(null, { productPrice: mockData[i].product_price });

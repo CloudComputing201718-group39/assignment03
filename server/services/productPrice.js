@@ -4,6 +4,7 @@
 const seneca = require('seneca')();
 const Promise = require('bluebird');
 const config = require('../config');
+
 /**
  * Convert act to Promise
  */
@@ -18,7 +19,7 @@ const GET_PRODUCT_PRICE = { role:'product_descp', cmd:'productprice' };
  * Call Service Method
  */
 const getProductPrice = (productId) => {
-    return act(Object.assign({}, GET_PRODUCT_PRICE, { productID }));
+    return act(Object.assign({}, GET_PRODUCT_PRICE, { productId }));
 };
 
 module.exports = {

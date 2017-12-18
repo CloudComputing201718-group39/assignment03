@@ -20,10 +20,10 @@ const GET_PRODUCT_URL = { role:'product_descp', cmd:'producturl' };
  * Call Service Method
  */
 const getProductURL = (productId) => {
-    return act(Object.assign({}, GET_PRODUCT_URL, { productID }));
+    return act(Object.assign({}, GET_PRODUCT_URL, { productId }));
 };
 const getProductName = (productId) => {
-    return act(Object.assign({}, GET_PRODUCT_NAME, { productID }));
+    return act(Object.assign({}, GET_PRODUCT_NAME, { productId }));
 };
 
 module.exports = {
