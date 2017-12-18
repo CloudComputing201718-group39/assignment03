@@ -7,7 +7,7 @@ module.exports = function (options) {
     const mockData = require('./MOCK_DATA.json');
 
     // Todo: Add the patterns and their corresponding functions
-    this.add('role:product_price, cmd:proudctprice', getProductPrice);
+    this.add('role:product_price, cmd:productprice', getProductPrice);
 
     // Todo: add the pattern functions and describe the logic inside the function
     function getProductPrice(msg, respond) {
